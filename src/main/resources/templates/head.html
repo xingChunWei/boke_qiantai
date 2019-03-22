@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>博-----客</title>
+    <link rel="stylesheet" th:href="@{/layui/layui/css/layui.css}" media="all"/>
+    <script type="text/javascript" th:src="@{/layui/layui/layui.js}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+            crossorigin="anonymous"></script>
+    <style>
+        .nav-head{
+            height: 68px;
+        }
+        .nav-head li{
+            display: inline-block;
+            width: auto;
+            margin-left: 20px;
+        }
+        .nav-head li a{
+            height: 100%;
+            color: white;
+            font-weight: 800;
+            font-size: 28px;
+            line-height: 68px;
+        }
+
+        .nav-head .nav-head_li{
+            margin-left: 200px;
+            position: relative;
+        }
+        .nav-head .nav-head_li input{
+            display: inline-block;
+            width: 250px;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        .nav-head .nav-head_li a{
+            width: auto;
+            height: 100%;
+            color: #666666;
+            font-size: 30px;
+            position: absolute;
+            left: 230px;
+            top: -20px;
+        }
+
+    </style>
+</head>
+<body>
+<div th:fragment="head" class="head">
+    <div   style="height: 100px;width: 100%;color: white;font-size: 30px;font-weight: 800;line-height: 100px;text-align: right">
+       <!-- <img th:src="@{/img/btou.png}" alt="" style="width: 100%;height: 100%;opacity:0.4;">-->
+        世上最美好的事是：我已经长大，父母还未老;我有能力报答，父母仍然健康。<br>-------流人
+    </div>
+    <!--导航条-->
+    <div  style="border-bottom: 2px solid #eeeeee;height: 70px">
+
+        <div style="margin: auto;width: 1200px;">
+            <ul class="nav-head">
+                <li><a href="/index/one">首页</a></li>
+                <li><a href="/index/all">全部文章</a></li>
+                <li><a href="/index/msgBread">留言</a></li>
+                <li><a href="">关于作者</a></li>
+                <li class="nav-head_li"><input type="text" placeholder="输入内容"><a href=""><i class="layui-icon">&#xe615;</i></a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    </div>
+
+<script>
+    $(".layui-nav li").click(function () {
+        $(this).addClass('layui-this').siblings().removeClass('layui-this');
+    });
+</script>
+</body>
+</html>

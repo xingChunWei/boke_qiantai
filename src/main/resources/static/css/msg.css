@@ -1,0 +1,109 @@
+/*
+留言页面*/
+
+.liuyan_bt {
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #DFE2F3;
+    font-size: 20px;
+    color: #EE9A00;
+    line-height: 50px;
+    padding-left: 20px;
+
+}
+
+.liuyan_text {
+    width: 100%;
+    height: auto;
+    border: 1px solid #EE9A00;
+    margin-top: 10px;
+    padding: 20px;
+    min-height: 150px;
+    font-size: 18px;
+
+}
+
+.liuyan_text_sj {
+    color: #2e6da4;
+}
+
+.liuyan_button {
+    width: 80px;
+    height: 30px;
+    background-color: #EE9A00;
+}
+
+/*
+博客文章内容Css
+*/
+
+.wz_text_bt {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+
+}
+
+.wz_text_xx {
+    width: 90%;
+    height: 35px;
+    border: 1px dashed #c0c0c0;
+    margin: auto;
+    font-size: 16px;
+    text-align: center;
+    line-height: 35px;
+    color: #8c8c8c;
+}
+
+.wz_text_xx_kg {
+    width: 30px;
+    height: auto;
+    display: inline-block;
+
+}
+
+.wz_text_font {
+    width: 96%;
+    height: auto;
+    padding: 20px;
+    border-top: 2px solid #8c8c8c;
+    margin-top: 20px;
+    border-bottom: 2px solid #8c8c8c;
+    font-size: 18px;
+    line-height: normal;
+}
+
+/*文章评论CSS*/
+
+.TopXia {
+    font-size: 18px;
+    color: #2b669a;
+    display: inline-block;
+}
+
+.commentTiao {
+    border-bottom: 2px solid #DFE2F3;
+    height: auto;
+}
+
+.commentTiao .yi{
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.commentTiao .yi .spn {
+    color: #01abee;
+    font-size: 18px;
+}
+
+.commentTiao .hf {
+    margin-left: 1100px;
+}
+
+.commentTiao .hf a,i {
+    color: #01abee;
+    font-size: 18px;
+}

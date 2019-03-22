@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F8F9;
+}
+
+/**
+清除浮动
+ */
+.clearfix:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.mai {
+    width: 1200px;
+    margin: auto;
+    height: auto;
+    min-height: 700px;
+    background-color: #ffffff;
+
+}
+
+.fy {
+    position: fixed;
+    bottom: 140px;
+    margin-left: 200px;
+}
+
+.mai .bk{
+    /*border: 1px solid #DFE2F3;*/
+    box-shadow: 3px 3px 10px 3px #888888;
+}
+

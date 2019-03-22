@@ -1,0 +1,140 @@
+/**
+    @首页中部CSS
+ */
+
+.z_left {
+    float: left;
+    width: 250px;
+    height: 700px;
+}
+
+
+.zho {
+    width: 100%;
+    height: 250px;
+    margin-top: 10px;
+}
+
+.zho_1 {
+    border-bottom: 2px solid #E3E3E3;
+    width: 100%;
+    height: 105px
+}
+
+/**
+     头像
+ */
+.head_xp {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #2e6da4;
+    float: left;
+    border-radius: 50%;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+/*博主姓名*/
+.bo_name {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    line-height: 100px;
+    font-size: 20px;
+    color: #204d74;
+}
+
+.liulan_xx {
+    width: 100%;
+    height: 90px;
+    float: left;
+    overflow: hidden;
+    border-bottom: 2px solid #E3E3E3;
+}
+
+.liulan_xx ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.liulan_xx ul li {
+    float: left;
+
+    width: 70px;
+    height: 35px;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.liulan_xx .shuz li {
+    font-weight: 500;
+    border-right: 1px solid #bbb;
+}
+
+.zxfb {
+    width: 100%;
+    height: 30px;
+    font-size: 25px;
+    color: #2cA6CB;
+    line-height: 30px;
+    font-weight: 800;
+    border-bottom: 2px solid #cccccc;
+}
+
+.z_left .wzfl{
+    padding: 10px;
+}
+.z_left .wzfl ul li{
+    padding: 10px 30px;
+    border-bottom: 1px solid #cccccc;
+    font-size: 21px;
+
+
+}
+
+.z_left .wzfl ul li a{
+    color: #01abee;
+}
+
+/*中部右边文章部分*/
+.z_right {
+    float: left;
+    width: 940px;
+    margin-left: 10px;
+    height: auto;
+
+}
+
+ .layui-timeline p{
+    font-size: 18px;
+}
+
+ .layui-timeline .bj img{
+    width: 20px;
+    height: 20px;
+}
+
+.wz_div {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    border-bottom: 2px solid #E3E3E3;
+    background-color: white;
+}
+
+.wz_div .wz_tb {
+    width: 30px;
+    height: 30px;
+}
+
+.wz_div .wz_bt {
+    font-size: 20px;
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: middle;
+}

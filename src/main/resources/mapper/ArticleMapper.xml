@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.ArticleMapper">
+
+
+    <resultMap id="selectArticleAndArticleTypes" type="com.example.entity.Article">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="founder" property="founder"/>
+        <result column="creationTime" property="creationTime"/>
+        <result column="readNumber" property="readNumber"/>
+        <result column="likes" property="likes"/>
+        <result column="a_id" property="aId"/>
+        <result column="state" property="state"/>
+        <association property="articleTypes" javaType="com.example.entity.ArticleTypes">
+            <id column="tid" property="id"/>
+            <result column="articleTypeName" property="articleTypeName"/>
+        </association>
+
+    </resultMap>
+    <!-- 分页查询-->
+    <select id="findAllArticle" parameterType="com.example.utils.Page" resultMap="selectArticleAndArticleTypes">
+        select a.id,
+        a.title ,
+        left (a.content,50) content,
+        a.founder,
+        a.creationTime,
+        a.readNumber,
+        a.likes,
+        a.state,
+        a.a_id,
+        t.id tid,
+        t.articleTypeName
+        from article a
+        inner join articletypes t
+        on a.a_id = t.id
+
+        <where>
+            <if test="state !=null">
+                and a.state=#{state}
+            </if>
+            <if test="aId !=null">
+                and a_id=#{aId}
+            </if>
+            <if test="condition !=''and condition !=null">
+                and title like "%"#{condition}"%"
+            </if>
+        </where>
+        limit ${start},${limit}
+    </select>
+
+    <!--统计个数-->
+    <select id="findCount" parameterType="com.example.utils.Page" resultType="int">
+        select count(id) from article
+        <where>
+            <if test="state !=null">
+                and state=#{state}
+            </if>
+            <if test="aId !=null">
+                  and a_id=#{aId}
+              </if>
+        </where>
+        ;
+    </select>
+
+    <!--查看博客-->
+    <select id="findOne" parameterType="java.lang.String" resultType="Article">
+        select *
+        from article
+        where id = #{id};
+    </select>
+
+    <!--上一篇-->
+
+    <select id="findTop" parameterType="com.example.entity.Article" resultType="com.example.entity.Article">
+        SELECT * FROM article WHERE state=${state} and creationTime &lt; (SELECT creationTime FROM article WHERE id=#{id}) ORDER BY creationTime ASC limit 0,1;
+
+    </select>
+
+    <select id="findBelow" parameterType="com.example.entity.Article" resultType="com.example.entity.Article">
+        SELECT * FROM article WHERE state=${state} and creationTime  &gt; (SELECT creationTime FROM article WHERE id=#{id})  ORDER BY creationTime ASC limit 0,1;
+
+    </select>
+
+
+</mapper>
