@@ -5,10 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-/**
- * 评论实体
- */
-public class Comment {
+public class  TWOComment {
     private String id;
 
     private String commentText;
@@ -17,29 +14,10 @@ public class Comment {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date commentTime;
 
-    private String userName;//评论者
-
-    private String aId;//外键关连文章表ID
+    private String userName;
+    private String OneCommentID;//上级评论ID
 
     private Integer state;//状态  1审核通过  2 未通过
-
-    private Integer nId;  //评论上级ID
-
-    public Integer getnId() {
-        return nId;
-    }
-
-    public void setnId(Integer nId) {
-        this.nId = nId;
-    }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
-    }
 
 
     public String getId() {
@@ -74,11 +52,19 @@ public class Comment {
         this.userName = userName;
     }
 
-    public String getaId() {
-        return aId;
+    public String getOneCommentID() {
+        return OneCommentID;
     }
 
-    public void setaId(String aId) {
-        this.aId = aId;
+    public void setOneCommentID(String oneCommentID) {
+        OneCommentID = oneCommentID;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

@@ -60,6 +60,10 @@ public class CommentController {
         JsonResult jsonResult = new JsonResult();
         comment.setUserName("邢小白的青春");
         comment.setCommentTime(new Date());
+        //如果没有上级评论ID   这个评论为一级评论
+        if (comment.getnId() == null) {
+            comment.setnId(0);
+        }
         try {
             commentService.saveComment(comment);
         } catch (Exception e) {
@@ -72,12 +76,13 @@ public class CommentController {
 
     /**
      * 根据ID查询文章评论条数
+     *
      * @param id
      * @return
      */
-    @RequestMapping(value = "/countComment",method = RequestMethod.GET)
+    @RequestMapping(value = "/countComment", method = RequestMethod.GET)
     @ResponseBody
-    public JsonResult countComment(String id){
+    public JsonResult countComment(String id) {
         JsonResult jsonResult = new JsonResult();
         jsonResult.setCount(commentService.countComment(id));
         return jsonResult;
